@@ -36,7 +36,7 @@ STEPS:
 		- Key or ID
 		- Secret
 
-    ix) Navigate to this URL https://vr2.verticalresponse.com/users/sign_up and enter the email, password given in step (ii) and sign up. 
+        ix) Navigate to this URL https://vr2.verticalresponse.com/users/sign_up and enter the email, password given in step (ii) and sign up. 
 
 	x) Then navigate to "http://developer.verticalresponse.com/io-docs"
 		and select the correct “Existing Client” and provide the Client ID/Key, Secret used in step (viii) and click 'Authorize'.
