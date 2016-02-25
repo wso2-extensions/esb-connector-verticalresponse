@@ -35,7 +35,7 @@
                payload = mc.getPayloadJSON();
 
                 if(email != null && email != ""){
-                      payload.email = email;
+                    payload.email = email;
                 }
 
                mc.setPayloadJSON(payload);
