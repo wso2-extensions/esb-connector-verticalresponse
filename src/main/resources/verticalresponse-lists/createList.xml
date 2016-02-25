@@ -35,11 +35,11 @@
                 payload = mc.getPayloadJSON();
 
                 if(name != null && name != ""){
-                      payload.name = name;
+                    payload.name = name;
                 }
 
                 if(isPublic != null && isPublic != ""){
-                      payload.is_public = isPublic;
+                    payload.is_public = isPublic;
                 }
 
                mc.setPayloadJSON(payload);
