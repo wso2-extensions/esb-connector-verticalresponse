@@ -11,7 +11,7 @@ Tested Platform:
 
  - Microsoft WINDOWS V-7
  - UBUNTU 14.04
- - WSO2 ESB 4.9.0
+ - WSO2 ESB 4.9.0, 5.0.0-BETA
 
 STEPS:
 
@@ -56,13 +56,13 @@ STEPS:
 		NOTE : CERT_FILE_NAME is the file name which was extracted from verticalrespose, change it accordingly. (e.g. vrapi.verticalresponse.com)
 			   CERT_NAME is name of the certificate. (e.g. VResp)
 	   
-	iii) Goto new ESB 4.9.0 folder and place the downloaded certificate in "<ESB_HOME>/repository/resources/security/"
+	iii) Goto new ESB 5.0.0-BETA folder and place the downloaded certificate in "<ESB_HOME>/repository/resources/security/"
 
 	iv) Navigate to "<ESB_HOME>/repository/resources/security/" using command prompt and execute keytool -importcert -file CERT_FILE_NAME -keystore client-truststore.jks -alias "CERT_NAME" in command line to import VerticalResponse certificate in to keystore. Give "wso2carbon" as password.
 		NOTE : CERT_FILE_NAME is the file name which was extracted from verticalrespose, change it accordingly. (e.g. vrapi.verticalresponse.com)
 			   CERT_NAME is name of the certificate. (e.g. VResp)
 	
-  3. Create and add a zip file of ESB 4.9.0 with applied keystores in step 2 (iii) to the location: "{VERTICALRESPONSE_HOME}/repository/"
+  3. Create and add a zip file of ESB 5.0.0-BETA with applied keystores in step 2 (iii) to the location: "{VERTICALRESPONSE_HOME}/repository/"
 
   4. Update the 'verticalresponse.properties' file at the location "{VERTICALRESPONSE_HOME}/src/test/resources/artifacts/ESB/connector/config/" as below.
    	 - accessToken=Use the access token you got from step 1->(xii)
