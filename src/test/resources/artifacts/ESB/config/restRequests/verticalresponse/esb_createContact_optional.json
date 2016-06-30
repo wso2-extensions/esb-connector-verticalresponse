@@ -1,7 +1,7 @@
 {
   "accessToken": "%s(accessToken)",
   "apiUrl": "%s(apiUrl)",
-  "email": "%s(email)",
+  "email": "%s(emailOptional)",
   "listId": "%s(listId)",
   "streetAddress": "streetAddress",
   "lastName": "testLastName",

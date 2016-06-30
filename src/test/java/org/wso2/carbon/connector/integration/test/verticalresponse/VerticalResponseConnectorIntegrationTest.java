@@ -57,7 +57,7 @@ public class VerticalResponseConnectorIntegrationTest extends ConnectorIntegrati
     @BeforeClass(alwaysRun = true)
     public void setEnvironment() throws Exception {
 
-        init("verticalresponse-connector-1.0.1-SNAPSHOT");
+        init("verticalresponse-connector-1.0.1");
 
         esbRequestHeadersMap.put("Accept-Charset", "UTF-8");
         esbRequestHeadersMap.put("Content-Type", "application/json");
@@ -69,7 +69,8 @@ public class VerticalResponseConnectorIntegrationTest extends ConnectorIntegrati
     /**
      * Positive test case for createContact method with mandatory parameters.
      */
-    @Test(priority = 1, groups = {"wso2.esb"}, description = "VerticalResponse {createContact} integration test with mandatory parameters.")
+    @Test(priority = 1, groups = {"wso2.esb"},
+            description = "VerticalResponse {createContact} integration test with mandatory parameters.")
     public void testCreateContactWithMandatoryParameters() throws Exception {
 
         String urlRemainder = "/contacts/";
@@ -95,7 +96,8 @@ public class VerticalResponseConnectorIntegrationTest extends ConnectorIntegrati
     /**
      * Positive test case for createList method with mandatory parameters.
      */
-    @Test(priority = 2, groups = {"wso2.esb"}, description = "VerticalResponse {createList} integration test with mandatory parameters.")
+    @Test(priority = 2, groups = {"wso2.esb"},
+            description = "VerticalResponse {createList} integration test with mandatory parameters.")
     public void testCreateListWithMandatoryParameters() throws Exception {
 
         esbRequestHeadersMap.put("Action", "urn:createList");
@@ -116,7 +118,8 @@ public class VerticalResponseConnectorIntegrationTest extends ConnectorIntegrati
     /**
      * Positive test case for createList method with optional parameters.
      */
-    @Test(priority = 2, groups = {"wso2.esb"}, description = "VerticalResponse {createList} integration test with optional parameters.")
+    @Test(priority = 2, groups = {"wso2.esb"},
+            description = "VerticalResponse {createList} integration test with optional parameters.")
     public void testCreateListWithOptionalParameters() throws Exception {
 
         esbRequestHeadersMap.put("Action", "urn:createList");
@@ -137,7 +140,8 @@ public class VerticalResponseConnectorIntegrationTest extends ConnectorIntegrati
     /**
      * Negative test case for createList method.
      */
-    @Test(priority = 2, groups = {"wso2.esb"}, description = "VerticalResponse {createList} integration test with negative case.")
+    @Test(priority = 2, groups = {"wso2.esb"},
+            description = "VerticalResponse {createList} integration test with negative case.")
     public void testCreateListWithNegativeCase() throws Exception {
 
         esbRequestHeadersMap.put("Action", "urn:createList");
@@ -156,7 +160,8 @@ public class VerticalResponseConnectorIntegrationTest extends ConnectorIntegrati
      * Positive test case for addContactToList method with mandatory parameters.
      */
     @Test(priority = 2, dependsOnMethods = {"testCreateContactWithMandatoryParameters",
-            "testCreateListWithMandatoryParameters"}, groups = {"wso2.esb"}, description = "VerticalResponse {addContactToList} integration test with mandatory parameters.")
+            "testCreateListWithMandatoryParameters"}, groups = {"wso2.esb"},
+            description = "VerticalResponse {addContactToList} integration test with mandatory parameters.")
     public void testAddContactToListWithMandatoryParameters() throws Exception {
 
         esbRequestHeadersMap.put("Action", "urn:addContactToList");
@@ -180,7 +185,9 @@ public class VerticalResponseConnectorIntegrationTest extends ConnectorIntegrati
     /**
      * Negative test case for addContactToList method.
      */
-    @Test(priority = 2, dependsOnMethods = {"testAddContactToListWithMandatoryParameters"}, groups = {"wso2.esb"}, description = "VerticalResponse {addContactToList} integration test with negative case.")
+    @Test(priority = 2, dependsOnMethods = {"testAddContactToListWithMandatoryParameters"},
+            groups = {"wso2.esb"}, description = "VerticalResponse {addContactToList} integration " +
+                                                 "test with negative case.")
     public void testAddContactToListWithNegativeCase() throws Exception {
 
         esbRequestHeadersMap.put("Action", "urn:addContactToList");
@@ -200,7 +207,9 @@ public class VerticalResponseConnectorIntegrationTest extends ConnectorIntegrati
     /**
      * Positive test case for updateList method with mandatory parameters.
      */
-    @Test(priority = 2, dependsOnMethods = {"testAddContactToListWithMandatoryParameters"}, groups = {"wso2.esb"}, description = "VerticalResponse {updateList} integration test with mandatory parameters.")
+    @Test(priority = 2, dependsOnMethods = {"testAddContactToListWithMandatoryParameters"},
+            groups = {"wso2.esb"}, description = "VerticalResponse {updateList} integration test with" +
+                                                 " mandatory parameters.")
     public void testUpdateListWithMandatoryParameters() throws Exception {
 
         esbRequestHeadersMap.put("Action", "urn:updateList");
@@ -222,7 +231,9 @@ public class VerticalResponseConnectorIntegrationTest extends ConnectorIntegrati
     /**
      * Positive test case for updateList method with optional parameters.
      */
-    @Test(priority = 2, dependsOnMethods = {"testCreateListWithOptionalParameters"}, groups = {"wso2.esb"}, description = "VerticalResponse {updateList} integration test with optional parameters.")
+    @Test(priority = 2, dependsOnMethods = {"testCreateListWithOptionalParameters"},
+            groups = {"wso2.esb"}, description = "VerticalResponse {updateList} integration test with" +
+                                                 " optional parameters.")
     public void testUpdateListWithOptionalParameters() throws Exception {
 
         esbRequestHeadersMap.put("Action", "urn:updateList");
@@ -245,7 +256,8 @@ public class VerticalResponseConnectorIntegrationTest extends ConnectorIntegrati
     /**
      * Negative test case for updateList method.
      */
-    @Test(priority = 2, groups = {"wso2.esb"}, description = "VerticalResponse {updateList} integration test with negative case.")
+    @Test(priority = 2, groups = {"wso2.esb"}, description = "VerticalResponse {updateList} " +
+                                                             "integration test with negative case.")
     public void testUpdateListWithNegativeCase() throws Exception {
 
         esbRequestHeadersMap.put("Action", "urn:updateList");
@@ -263,7 +275,9 @@ public class VerticalResponseConnectorIntegrationTest extends ConnectorIntegrati
     /**
      * Positive test case for getContactMemberList method with mandatory parameters.
      */
-    @Test(priority = 2, dependsOnMethods = {"testCreateContactWithMandatoryParameters"}, groups = {"wso2.esb"}, description = "VerticalResponse {getContactMemberList} integration test with mandatory parameters.")
+    @Test(priority = 2, dependsOnMethods = {"testCreateContactWithMandatoryParameters"},
+            groups = {"wso2.esb"}, description = "VerticalResponse {getContactMemberList} integration " +
+                                                 "test with mandatory parameters.")
     public void testGetContactMemberListWithMandatoryParameters() throws Exception {
 
         esbRequestHeadersMap.put("Action", "urn:getContactMemberList");
@@ -288,7 +302,10 @@ public class VerticalResponseConnectorIntegrationTest extends ConnectorIntegrati
     /**
      * Positive test case for getContactMemberList method with optional parameters.
      */
-    @Test(priority = 2, groups = {"wso2.esb"}, dependsOnMethods = {"testCreateContactWithOptionalParameters"}, description = "VerticalResponse {getContactMemberList} integration test with optional parameters.")
+    @Test(priority = 2, groups = {"wso2.esb"},
+            dependsOnMethods = {"testCreateContactWithOptionalParameters"},
+            description = "VerticalResponse {getContactMemberList} integration test with optional" +
+                          " parameters.")
     public void testGetContactMemberListWithOptionalParameters() throws Exception {
 
         esbRequestHeadersMap.put("Action", "urn:getContactMemberList");
@@ -316,7 +333,8 @@ public class VerticalResponseConnectorIntegrationTest extends ConnectorIntegrati
     /**
      * Negative test case for getContactMemberList method.
      */
-    @Test(priority = 2, groups = {"wso2.esb"}, description = "VerticalResponse {getContactMemberList} integration test with negative case.")
+    @Test(priority = 2, groups = {"wso2.esb"},
+            description = "VerticalResponse {getContactMemberList} integration test with negative case.")
     public void testGetContactMemberListWithNegativeCase() throws Exception {
 
         esbRequestHeadersMap.put("Action", "urn:getContactMemberList");
@@ -334,7 +352,9 @@ public class VerticalResponseConnectorIntegrationTest extends ConnectorIntegrati
     /**
      * Positive test case for removeContactFromList method with mandatory parameters.
      */
-    @Test(priority = 3, dependsOnMethods = {"testUpdateListWithMandatoryParameters"}, groups = {"wso2.esb"}, description = "VerticalResponse {removeContactFromList} integration test with mandatory parameters.")
+    @Test(priority = 3, dependsOnMethods = {"testUpdateListWithMandatoryParameters"},
+            groups = {"wso2.esb"}, description = "VerticalResponse {removeContactFromList} integration" +
+                                                 " test with mandatory parameters.")
     public void testRemoveContactFromListWithMandatoryParameters() throws Exception {
 
         esbRequestHeadersMap.put("Action", "urn:removeContactFromList");
@@ -356,7 +376,9 @@ public class VerticalResponseConnectorIntegrationTest extends ConnectorIntegrati
     /**
      * Negative test case for removeContactFromList method.
      */
-    @Test(priority = 2, dependsOnMethods = {"testRemoveContactFromListWithMandatoryParameters"}, groups = {"wso2.esb"}, description = "VerticalResponse {removeContactFromList} integration test with negative case.")
+    @Test(priority = 2, dependsOnMethods = {"testRemoveContactFromListWithMandatoryParameters"},
+            groups = {"wso2.esb"}, description = "VerticalResponse {removeContactFromList} integration " +
+                                                 "test with negative case.")
     public void testRemoveContactFromListWithNegativeCase() throws Exception {
 
         esbRequestHeadersMap.put("Action", "urn:removeContactFromList");
@@ -376,7 +398,8 @@ public class VerticalResponseConnectorIntegrationTest extends ConnectorIntegrati
     /**
      * Positive test case for createContact method with optional parameters.
      */
-    @Test(priority = 2, groups = {"wso2.esb"}, dependsOnMethods = {"testCreateListWithMandatoryParameters"}, description = "VerticalResponse {createContact} integration test with optional parameters.")
+    @Test(priority = 2, groups = {"wso2.esb"}, dependsOnMethods = {"testCreateListWithMandatoryParameters"},
+            description = "VerticalResponse {createContact} integration test with optional parameters.")
     public void testCreateContactWithOptionalParameters() throws Exception {
 
         String urlRemainder = "/contacts/";
@@ -408,7 +431,8 @@ public class VerticalResponseConnectorIntegrationTest extends ConnectorIntegrati
     /**
      * Negative test case for createContact method.
      */
-    @Test(priority = 2, groups = {"wso2.esb"}, description = "VerticalResponse {createContact} integration test for negative case")
+    @Test(priority = 2, groups = {"wso2.esb"},
+            description = "VerticalResponse {createContact} integration test for negative case")
     public void testCreateContactWithNegativeCase() throws Exception {
 
         esbRequestHeadersMap.put("Action", "urn:createContact");
@@ -429,7 +453,9 @@ public class VerticalResponseConnectorIntegrationTest extends ConnectorIntegrati
     /**
      * Positive test case for updateContact method with optional parameters.
      */
-    @Test(priority = 2, groups = {"wso2.esb"}, dependsOnMethods = {"testCreateContactWithOptionalParameters"}, description = "VerticalResponse {updateContact} integration test with optional parameters.")
+    @Test(priority = 2, groups = {"wso2.esb"},
+            dependsOnMethods = {"testCreateContactWithOptionalParameters"},
+            description = "VerticalResponse {updateContact} integration test with optional parameters.")
     public void testUpdateContactWithOptionalParameters() throws Exception {
 
         String urlRemainder = "/contacts/";
@@ -457,7 +483,9 @@ public class VerticalResponseConnectorIntegrationTest extends ConnectorIntegrati
     /**
      * Negative test case for updateContact method.
      */
-    @Test(priority = 2, groups = {"wso2.esb"}, dependsOnMethods = {"testCreateContactWithOptionalParameters"}, description = "VerticalResponse {updateContact} integration test with negative case.")
+    @Test(priority = 2, groups = {"wso2.esb"},
+            dependsOnMethods = {"testCreateContactWithOptionalParameters"},
+            description = "VerticalResponse {updateContact} integration test with negative case.")
     public void testUpdateContactWithNegativeCase() throws Exception {
 
         esbRequestHeadersMap.put("Action", "urn:updateContact");
@@ -479,7 +507,9 @@ public class VerticalResponseConnectorIntegrationTest extends ConnectorIntegrati
     /**
      * Positive test case for getContact method with mandatory parameters.
      */
-    @Test(priority = 2, groups = {"wso2.esb"}, dependsOnMethods = {"testCreateContactWithMandatoryParameters"}, description = "VerticalResponse {getContact} integration test with mandatory parameters.")
+    @Test(priority = 2, groups = {"wso2.esb"},
+            dependsOnMethods = {"testCreateContactWithMandatoryParameters"},
+            description = "VerticalResponse {getContact} integration test with mandatory parameters.")
     public void testGetContactWithMandatoryParameters() throws Exception {
 
         String urlRemainder = "/contacts/";
@@ -505,7 +535,9 @@ public class VerticalResponseConnectorIntegrationTest extends ConnectorIntegrati
     /**
      * Positive test case for getContact method with optional parameters.
      */
-    @Test(priority = 2, groups = {"wso2.esb"}, dependsOnMethods = {"testCreateContactWithMandatoryParameters"}, description = "VerticalResponse {getContact} integration test with optional parameters.")
+    @Test(priority = 2, groups = {"wso2.esb"},
+            dependsOnMethods = {"testCreateContactWithMandatoryParameters"},
+            description = "VerticalResponse {getContact} integration test with optional parameters.")
     public void testGetContactWithOptionalParameters() throws Exception {
 
         String urlRemainder = "/contacts/";
@@ -531,7 +563,9 @@ public class VerticalResponseConnectorIntegrationTest extends ConnectorIntegrati
     /**
      * Negative test case for getContact method with optional parameters.
      */
-    @Test(priority = 2, groups = {"wso2.esb"}, dependsOnMethods = {"testCreateContactWithMandatoryParameters"}, description = "VerticalResponse {getContact} integration test with optional parameters.")
+    @Test(priority = 2, groups = {"wso2.esb"},
+            dependsOnMethods = {"testCreateContactWithMandatoryParameters"},
+            description = "VerticalResponse {getContact} integration test with optional parameters.")
     public void testGetContactWithNegativeCase() throws Exception {
 
         String urlRemainder = "/contacts/";
@@ -556,7 +590,8 @@ public class VerticalResponseConnectorIntegrationTest extends ConnectorIntegrati
      * Positive test case for sendEmail method with mandatory parameters.
      */
     @Test(priority = 2, groups = {"wso2.esb"}, dependsOnMethods = {"testCreateContactWithMandatoryParameters",
-            "testCreateContactWithOptionalParameters"}, description = "VerticalResponse {sendEmail} integration test with mandatory parameters.")
+            "testCreateContactWithOptionalParameters"}, description = "VerticalResponse {sendEmail} " +
+                                                                      "integration test with mandatory parameters.")
     public void testSendEmailWithMandatoryParameters() throws Exception {
 
         String urlRemainder = "/messages/emails/";
@@ -588,7 +623,8 @@ public class VerticalResponseConnectorIntegrationTest extends ConnectorIntegrati
      * Positive test case for sendEmail method with optional parameters.
      */
     @Test(priority = 2, groups = {"wso2.esb"}, dependsOnMethods = {"testCreateContactWithMandatoryParameters",
-            "testCreateContactWithOptionalParameters"}, description = "VerticalResponse {sendEmail} integration test with optional parameters.")
+            "testCreateContactWithOptionalParameters"}, description = "VerticalResponse {sendEmail} integration " +
+                                                                      "test with optional parameters.")
     public void testSendEmailWithOptionalParameters() throws Exception {
 
         String urlRemainder = "/messages/emails/";
@@ -628,7 +664,8 @@ public class VerticalResponseConnectorIntegrationTest extends ConnectorIntegrati
      * Negative test case for sendEmail method.
      */
     @Test(priority = 2, groups = {"wso2.esb"}, dependsOnMethods = {"testCreateContactWithMandatoryParameters",
-            "testCreateContactWithOptionalParameters"}, description = "VerticalResponse {sendEmail} integration test with negative test case.")
+            "testCreateContactWithOptionalParameters"}, description = "VerticalResponse {sendEmail} integration " +
+                                                                      "test with negative test case.")
     public void testSendEmailWithNegativeCase() throws Exception {
 
         esbRequestHeadersMap.put("Action", "urn:sendEmail");
@@ -651,7 +688,8 @@ public class VerticalResponseConnectorIntegrationTest extends ConnectorIntegrati
     /**
      * Positive test case for getList method with mandatory parameters.
      */
-    @Test(priority = 2, groups = {"wso2.esb"}, dependsOnMethods = {"testCreateListWithMandatoryParameters"}, description = "VerticalResponse {getList} integration test with mandatory parameters.")
+    @Test(priority = 2, groups = {"wso2.esb"}, dependsOnMethods = {"testCreateListWithMandatoryParameters"},
+            description = "VerticalResponse {getList} integration test with mandatory parameters.")
     public void testGetListWithMandatoryParameters() throws Exception {
 
         esbRequestHeadersMap.put("Action", "urn:getList");
@@ -674,7 +712,8 @@ public class VerticalResponseConnectorIntegrationTest extends ConnectorIntegrati
     /**
      * Positive test case for getList method with optional parameters.
      */
-    @Test(priority = 2, groups = {"wso2.esb"}, dependsOnMethods = {"testCreateListWithMandatoryParameters"}, description = "VerticalResponse {getList} integration test with optional parameters.")
+    @Test(priority = 2, groups = {"wso2.esb"}, dependsOnMethods = {"testCreateListWithMandatoryParameters"},
+            description = "VerticalResponse {getList} integration test with optional parameters.")
     public void testGetListWithOptionalParameters() throws Exception {
 
         String type = connectorProperties.getProperty("type");
@@ -700,7 +739,8 @@ public class VerticalResponseConnectorIntegrationTest extends ConnectorIntegrati
      * Negative test case for getList method.
      */
     @Test(priority = 2, groups = {"wso2.esb"}, dependsOnMethods = {"testCreateContactWithMandatoryParameters",
-            "testCreateContactWithOptionalParameters"}, description = "VerticalResponse {getList} integration test with negative case.")
+            "testCreateContactWithOptionalParameters"}, description = "VerticalResponse {getList} integration " +
+                                                                      "test with negative case.")
     public void testGetListWithNegativeCase() throws Exception {
 
         esbRequestHeadersMap.put("Action", "urn:getList");
@@ -720,7 +760,8 @@ public class VerticalResponseConnectorIntegrationTest extends ConnectorIntegrati
     /**
      * Positive test case for listContacts method with mandatory parameters.
      */
-    @Test(priority = 2, groups = {"wso2.esb"}, dependsOnMethods = {"testCreateListWithMandatoryParameters"}, description = "VerticalResponse {listContacts} integration test with mandatory parameters.")
+    @Test(priority = 2, groups = {"wso2.esb"}, dependsOnMethods = {"testCreateListWithMandatoryParameters"},
+            description = "VerticalResponse {listContacts} integration test with mandatory parameters.")
     public void testListContactsWithMandatoryParameters() throws Exception {
 
         esbRequestHeadersMap.put("Action", "urn:listContacts");
@@ -746,7 +787,8 @@ public class VerticalResponseConnectorIntegrationTest extends ConnectorIntegrati
     /**
      * Positive test case for listContacts method with optional parameters.
      */
-    @Test(priority = 2, groups = {"wso2.esb"}, dependsOnMethods = {"testCreateListWithMandatoryParameters"}, description = "VerticalResponse {listContacts} integration test with optional parameters.")
+    @Test(priority = 2, groups = {"wso2.esb"}, dependsOnMethods = {"testCreateListWithMandatoryParameters"},
+            description = "VerticalResponse {listContacts} integration test with optional parameters.")
     public void testListContactsWithOptionalParameters() throws Exception {
 
         String type = connectorProperties.getProperty("type");
@@ -775,7 +817,8 @@ public class VerticalResponseConnectorIntegrationTest extends ConnectorIntegrati
      * Negative test case for listContacts method.
      */
     @Test(priority = 2, groups = {"wso2.esb"}, dependsOnMethods = {"testCreateContactWithMandatoryParameters",
-            "testListContactsWithOptionalParameters"}, description = "VerticalResponse {listContacts} integration test with negative case.")
+            "testListContactsWithOptionalParameters"}, description = "VerticalResponse {listContacts} " +
+                                                                     "integration test with negative case.")
     public void testListContactsWithNegativeCase() throws Exception {
 
         esbRequestHeadersMap.put("Action", "urn:listContacts");
